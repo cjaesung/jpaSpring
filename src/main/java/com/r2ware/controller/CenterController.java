@@ -1,7 +1,5 @@
 package com.r2ware.controller;
 
-import com.r2ware.repository.Member;
-import com.r2ware.repository.MemberRepository;
 import com.r2ware.repository.Users;
 import com.r2ware.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller

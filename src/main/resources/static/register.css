@@ -1,0 +1,42 @@
+input {
+  border-radius: 5px;
+}
+
+.input_container {
+  display: flex;
+  height: 250px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: space-around;
+  background: rgb(56, 55, 55);
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -150px;
+}
+
+.input_line {
+  display: flex;
+  width: 300px;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+
+  /* background: peru; */
+  color: white;
+}
+
+.input_line_btn {
+  display: flex;
+  width: 300px;
+  margin-top: 30px;
+
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+
+  /* background: peru; */
+}

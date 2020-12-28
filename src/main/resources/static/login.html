@@ -14,24 +14,27 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-   <div class="login_box">
-     <form action="/login" method="POST">
+    <div class="login_box">
+      <form action="/login" method="POST">
         <div class="container_box">
           <div class="action_box item1">
             <label for="userId">User ID &nbsp&nbsp&nbsp:</label>
-            <input type="text" name="userId" id="userId">
+            <input type="text" name="userId" id="userId" />
           </div>
           <div class="action_box item2">
             <label for="password">Password :</label>
-            <input type="text" name="password" id="password">
+            <input type="text" name="password" id="password" />
           </div>
           <div class="action_box item3">
-            <input class="btn_submit btn btn-primary" type="submit" value="Login">
+            <input
+              class="btn_submit btn btn-primary"
+              type="submit"
+              value="Login"
+            />
+            <a href="http://localhost:8080/register.html">Register</a>
           </div>
         </div>
-     </form>
+      </form>
     </div>
-
   </body>
 </html>
-

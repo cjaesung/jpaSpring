@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -27,16 +29,23 @@ public class CenterController {
              }
 
              // wrong password
-
-
-
              return "redirect:/login.html";
         }
 
-        //model.addAttribute("Users", user);
+        // not exist user information in the Database
         return "redirect:/login.html";
     }
 
+    @RequestMapping("/register")
+    @ResponseBody
+    public List<Users> register(Users user, Model model) {
+        List<Users> users = new ArrayList<Users>();
 
+
+        repository.save(user);
+        users.addAll(repository.findAll());
+
+        return users;
+    }
 
 }

@@ -2,52 +2,112 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Register</title>
-    <link rel="stylesheet" href="register.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- jqgrid -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/js/jquery.jqGrid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/js/i18n/grid.locale-en.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/css/ui.jqgrid-bootstrap-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/css/ui.jqgrid-bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/css/ui.jqgrid-bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.5.1/css/ui.jqgrid.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css"
+    />
+
+    <script src="register.js"></script>
   </head>
+
   <body>
-    <div id="register_container">
-      <form action="/register">
-        <div class="input_container">
-          <div class="input_line">
-            <label for="userId">아 이 디:</label>
-            <input type="text" name="userId" id="userId" placeholder="ID" />
-          </div>
-          <div class="input_line">
-            <label for="password">비밀번호:</label>
-            <input type="text" name="password" id="password" />
-          </div>
-          <div class="input_line">
-            <label for="email">이 메 일:</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div class="input_line">
-            <label for="tel">전화번호:</label>
-            <input type="text" name="tel" id="tel" />
-          </div>
-          <div class="input_line_btn">
+    <div id="container" class="container-fluid">
+      <!-- Title -->
+      <div class="bg-dark justify-content-start p-1" id="title">
+        <h3 class="text-white">Register</h3>
+        <p class="text-muted">Please, register your information.</p>
+      </div>
+
+      <!-- Register -->
+      <div class="justify-content-center p-5">
+        <form id="register_form" name="register_form">
+          <div class="form-group">
+            <label for="userId">User ID:</label>
             <input
-              style="
-                width: 100px;
-                height: 30px;
-                background: darkgoldenrod;
-                border: none;
-              "
-              type="submit"
-              name="btn_ok"
-              id="btn_ok"
-              value="OK"
-            />
-            <input
-              style="width: 100px; height: 30px"
-              type="button"
-              name="btn_clear"
-              id="btn_clear"
-              value="Cancle"
+              type="text"
+              class="form-control"
+              id="userId"
+              name="userId"
             />
           </div>
-        </div>
-      </form>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="tel">Tel:</label>
+            <input type="text" class="form-control" id="tel" name="tel" />
+          </div>
+        </form>
+        <button id="btn_submit" class="btn btn-primary">Register</button>
+        <button class="btn btn-default" onclick="clearForm();">Cancel</button>
+      </div>
+
+      <!-- Title -->
+      <div class="bg-dark text-white justify-content-start p-1" id="title">
+        <h3>Result</h3>
+      </div>
+
+      <!-- Result -->
+      <div class="justify-content-center">
+        <table id="jqGrid"></table>
+        <div id="gridpager"></div>
+      </div>
     </div>
   </body>
 </html>
